@@ -1,9 +1,10 @@
 const secondsContainer = document.querySelector('#seconds');
+const minutesContainer = document.querySelector('#minutes');
+const hoursContainer = document.querySelector('#hours');
+const daysContainer = document.querySelector('#days');
 
 const nextYear = new Date().getFullYear() + 1;
 const newYearTime = new Date(`January 01 ${nextYear} 00:00:00`);
-
-
 
 const updateCountdown = () => {
     const currentTime = new Date();
@@ -16,14 +17,10 @@ const updateCountdown = () => {
 
     // USANDO CONDICAO TERNARIA
     secondsContainer.textContent =  seconds < 10 ? `0${seconds}` : seconds ;
+    minutesContainer.textContent =  minutes < 10 ? `0${minutes}` : minutes ;
+    hoursContainer.textContent =  hours < 10 ? `0${hours}` : hours ;
+    daysContainer.textContent =  days < 10 ? `0${days}` : days ;
 
-    // USANDO CONDICAO IF ELSE
-    /* secondsContainer.textContent =  seconds;
-    if(seconds < 10){
-        secondsContainer.textContent = '0' + seconds;
-    }else{
-        seconds
-    } */
 }
 
 setInterval( updateCountdown, 1000);
